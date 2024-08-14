@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./TodoList.css";
 import axios from "axios";
 
 export default function TodoList() {
@@ -18,7 +19,9 @@ export default function TodoList() {
       <h1>Todo List</h1>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>{todo.todo}</li>
+          <li key={todo.id} className={todo.completed ? "done" : ""}>
+            {todo.todo}
+          </li>
         ))}
       </ul>
     </div>
